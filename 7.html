@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      p{
+         font-size: 30px;
+      }
+   </style>
+</head>
+<body>
+   <button id="jian">---</button><button id="jia">+++</button>
+   <p id="p">好好学习，天天向上</p>
+</body>
+<script>
+   let jian= document.getElementById('jian');
+   let jia= document.getElementById('jia');
+   let p= document.getElementById('p');
+   let num = 30;
+
+   jian.onclick=function(){
+      num--
+      if(num<12){
+         alert('可以了')
+      }else{
+         p.style.fontSize=num+'px'
+      }
+
+   }
+   jia.onclick=function(){
+      num++;
+      p.style.fontSize=num+'px'
+   }
+</script>
+</html>
