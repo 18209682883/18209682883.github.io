@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/*清除默认样式*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+input {
+  border: none;
+  outline: none; }
+
+body {
+  font-size: 0.16rem; }
+
+/*字体图标*/
+@font-face {
+  font-family: 'iconfont';
+  src: url("../font/iconfont.eot");
+  src: url("../font/iconfont.eot?#iefix") format("embedded-opentype"), url("../font/iconfont.woff2") format("woff2"), url("../font/iconfont.woff") format("woff"), url("../font/iconfont.ttf") format("truetype"), url("../font/iconfont.svg#iconfont") format("svg"); }
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/*滑动框架布局开始*/
+header, footer {
+  width: 4rem;
+  height: 1rem;
+  background: orange;
+  flex-shrink: 0; }
+
+footer {
+  height: 0.5rem; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.box {
+  flex: 1;
+  overflow: hidden; }
+
+.content {
+  min-height: 101%;
+  background: #eee;
+  position: relative; }
+  .content .refresh {
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    background: #ddd;
+    color: #fff; }
+  .content .more {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    background: #ddd;
+    color: #fff; }
+
+/*滑动框架布局结束*/
+/*头部布局*/
+header .top, footer .top {
+  width: 4rem;
+  height: 0.5rem;
+  background: red; }
+header nav, footer nav {
+  width: 4rem;
+  height: 0.5rem;
+  background: yellow; }
+  header nav > ul, footer nav > ul {
+    width: 6rem;
+    height: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    header nav > ul > li, footer nav > ul > li {
+      width: 0.6rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      text-align: center; }
+      header nav > ul > li.header-nav-active, footer nav > ul > li.header-nav-active {
+        color: red;
+        border-bottom: 0.02rem solid red;
+        box-sizing: border-box; }
+
+/*选项卡---轮播图部分*/
+.content {
+  display: flex; }
+
+#content-tab-bann {
+  width: 4rem;
+  flex: 1; }
+  #content-tab-bann > .swiper-wrapper > .swiper-slide {
+    background: pink; }
+    #content-tab-bann > .swiper-wrapper > .swiper-slide:nth-child(2n) {
+      background: yellow; }
+
+/*选项卡1布局开始*/
+/*#tab-one-bann*/
+#tab-one-bann {
+  width: 4rem;
+  height: 1.5rem; }
+  #tab-one-bann img {
+    width: 4rem;
+    height: 1.5rem; }
+
+/*选项卡1九宫格*/
+.tab-one-jiu {
+  width: 4rem;
+  height: 2rem;
+  background: yellow; }
+
+.tab-one-pic-list {
+  width: 4rem; }
+  .tab-one-pic-list > ul {
+    width: 4rem;
+    box-sizing: border-box;
+    padding: 0.14rem 0.05rem; }
+    .tab-one-pic-list > ul > li {
+      width: 3.9rem;
+      height: 1.4rem;
+      box-sizing: border-box;
+      padding-bottom: 0.2rem;
+      background: #fff;
+      display: flex; }
+      .tab-one-pic-list > ul > li div.one-pic-list-left img {
+        width: 1.23rem;
+        height: 1.23rem; }
+      .tab-one-pic-list > ul > li .one-pic-list-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding-left: 0.1rem; }
+        .tab-one-pic-list > ul > li .one-pic-list-right > h4 {
+          font-size: 0.14rem; }
+          .tab-one-pic-list > ul > li .one-pic-list-right > h4 > span {
+            display: inline-block;
+            box-sizing: border-box;
+            border: 0.01rem solid #e58668;
+            font-size: 0.12rem;
+            color: #e58668; }
+
+/*选项卡1布局结束*/
+/*底部导航布局*/
+footer {
+  width: 4rem;
+  height: 0.5rem; }
+  footer ul {
+    width: 4rem;
+    height: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff; }
+    footer ul li {
+      width: 15%;
+      height: 0.5rem;
+      text-align: center;
+      position: relative; }
+      footer ul li.footer-active {
+        transition: all 1s; }
+        footer ul li.footer-active > a {
+          position: absolute;
+          bottom: 0rem;
+          left: 0;
+          height: 0.7rem;
+          background: #fff;
+          width: 0.6rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0.3rem 0.3rem 0rem 0rem;
+          box-shadow: 0rem 0rem 0.07rem #000; }
+          footer ul li.footer-active > a span.iconfont {
+            background: green;
+            color: #fff;
+            width: 0.2rem;
+            border-radius: 0.05rem; }
+          footer ul li.footer-active > a p {
+            color: green; }
+
+/*# sourceMappingURL=index.css.map */

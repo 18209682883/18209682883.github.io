@@ -1,0 +1,216 @@
+@charset "utf-8";
+@import "common";
+@import "mixin";
+/*滑动框架布局开始*/
+header{
+    width: $w;
+    height: 1rem;
+    background: orange;
+    flex-shrink: 0;
+}
+footer{
+    @extend header;
+    height: 0.5rem;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.box{
+    flex:1;
+    overflow: hidden;
+//  background: #ddd;
+}
+.content{
+    min-height: 101%;
+    background: #eee;
+    position:relative;
+    .refresh{
+        position: absolute;
+        top:-0.5rem;
+        left:0;
+        right:0;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        text-align: center;
+        background: #ddd;
+        color:#fff; 
+    }
+    .more{
+        position: absolute;
+        bottom:-0.5rem;
+        left:0;
+        right:0;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        text-align: center;
+        background: #ddd;
+        color:#fff; 
+    }
+}
+
+/*滑动框架布局结束*/
+/*头部布局*/
+header{
+    .top{
+        width: $w;
+        height: 0.5rem;
+        background: red;
+    }
+    nav{
+        width: $w;
+        height: 0.5rem;
+        background: yellow;
+        >ul{
+            width: 6rem;
+            height: 0.5rem; 
+            display: flex;
+            justify-content: space-around;
+            align-items: center; 
+            >li{
+                width: 0.6rem;
+                height: 0.5rem;
+                line-height: 0.5rem;
+                text-align: center;
+                &.header-nav-active{
+                    color: red;
+                    border-bottom: 0.02rem solid red;
+                    box-sizing: border-box;
+                }
+            }         
+        }   
+    }
+}
+/*选项卡---轮播图部分*/
+.content{
+    display: flex;
+}
+#content-tab-bann{
+    width:$w;
+//  background: blue;
+    flex:1;
+    >.swiper-wrapper{
+        >.swiper-slide{
+            background: pink;
+            &:nth-child(2n){
+                background: yellow;
+            }
+        }
+    }
+    
+}
+/*选项卡1布局开始*/
+/*#tab-one-bann*/
+#tab-one-bann{
+    width: $w;
+    height: 1.5rem;
+    img{
+        width: $w;
+        height: 1.5rem;        
+    }
+}
+/*选项卡1九宫格*/
+.tab-one-jiu{
+    width: $w;
+    height: 2rem;
+    background: yellow;
+}
+.tab-one-pic-list{
+    width: $w;
+    
+    >ul{
+       width: $w;
+       box-sizing: border-box;
+       padding: 0.14rem 0.05rem;
+       
+       >li{
+           width: 3.9rem;
+           height: 1.4rem;
+           box-sizing: border-box;
+           padding-bottom: 0.2rem;
+           background: #fff;
+           display: flex;
+           div.one-pic-list-left{
+              img{
+                   width: 1.23rem;
+                   height: 1.23rem;
+               }
+           }
+           .one-pic-list-right{
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+               box-sizing: border-box;
+               padding-left: 0.1rem;
+               >h4{
+                   font-size: 0.14rem;
+                   >span{
+                       display: inline-block;
+                        box-sizing: border-box;
+                       border: 0.01rem solid #e58668;
+                       font-size: 0.12rem;
+                       color: #e58668;
+                      
+                   }
+               }
+           }
+
+       } 
+    }
+}
+/*选项卡1布局结束*/
+
+/*底部导航布局*/
+footer{
+    width:$w;
+    height: 0.5rem;
+    ul{
+        width:$w;
+        height: 0.5rem;  
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #fff;
+        li{
+            width:15%;
+            height:0.5rem;
+            text-align: center;
+            
+            position: relative;
+            &.footer-active{
+                transition: all 1s;
+                >a{
+                    position: absolute;
+                    bottom:0rem;
+                    left:0;
+                    height: 0.7rem;
+                    background: #fff;
+                    width: 0.6rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    //拱形
+                    border-radius: 0.3rem 0.3rem 0rem 0rem;
+                    box-shadow: 0rem 0rem 0.07rem #000;
+                    
+                    
+                    span.iconfont{
+                        background: green;
+                        color:#fff;
+                        width: 0.2rem;
+                        border-radius: 0.05rem;
+                    }
+                    p{
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+}

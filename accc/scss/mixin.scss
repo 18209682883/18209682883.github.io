@@ -1,0 +1,10 @@
+@charset "utf-8";
+//封装好的变量、宏、继承、插值等
+//声明变量
+$w:4rem;
+//声明宏
+@mixin flex(){
+    display: flex;
+}
+//声明插值
+$dir:direction;
